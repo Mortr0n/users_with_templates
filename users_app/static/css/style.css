@@ -1,0 +1,56 @@
+* {
+    font-family: 'PT Sans', sans-serif;
+}
+
+#wrapper {
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#user_display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid black;
+}
+
+#user_display table{
+    width: 650px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: cadetblue;
+}
+
+#user_add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user_add form {
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#user_add label, #user_add input {
+    height: 20px;
+    width: 120px;
+    margin: 10px 0 0 10px;
+}
+
+#user_add form #submit_button {
+    width: 40px;
+    height: 25px;
+    box-shadow: 3px 3px gray;
+    background-color:silver;
+}

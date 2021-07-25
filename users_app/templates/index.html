@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="user_display">
+            <h1>All the Users</h1>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+                {% for user in all_users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.email_address}}</td>
+                    <td>{{user.age}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="user_add">
+            <h1>Add a User</h1>
+            <form action='/add_user' method="POST">
+                {% csrf_token %}
+                <label name="first_name_label" >First Name:</label>
+                <input type="text" name="first_name_input">
+                <label name="last_name_label" >Last Name:</label>
+                <input type="text" name="last_name_input">
+                <label name="email_label" >Email:</label>
+                <input type="text" name="email_input">
+                <label name="age_label" >Age:</label>
+                <input type="text" name="age_input">
+                <input type="submit" value="Add" id="submit_button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
